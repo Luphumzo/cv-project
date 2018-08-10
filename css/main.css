@@ -7,13 +7,15 @@ body {
   scroll-behavior: smooth; }
   body h1 {
     text-align: center; }
+  body h5 {
+    font-size: 28px; }
 
 header {
-  height: 44vh;
+  height: 41.5vh;
   background-image: url("../images/walking-vader.jpg");
   background-size: contain;
   background-position: center;
-  background-position-y: 13%;
+  background-position-y: 12%;
   background-repeat: no-repeat;
   background-attachment: fixed; }
   header .logo {
@@ -28,6 +30,9 @@ header {
     top: 3%;
     color: #bd8852; }
 
+nav {
+  position: fixed; }
+
 .medium {
   background-image: url("../images/sunrise-vader.jpg");
   background-size: cover;
@@ -41,7 +46,7 @@ header {
   padding-top: 50px;
   height: 326px;
   color: #fff;
-  background-color: #1E88E5; }
+  background-color: #bd8852; }
   #section1 h1 {
     text-align: center;
     padding-top: 14px; }
@@ -54,7 +59,7 @@ header {
 #section3 {
   height: 540px;
   color: #fff;
-  background-color: #ff9800; }
+  background-color: #bd8852; }
 
 #section41 {
   padding-top: 10px;
@@ -69,12 +74,12 @@ header {
   padding-top: 10px;
   height: 330px;
   color: #fff;
-  background-color: #009688; }
+  background-color: #bd8852; }
 
 #section5 {
   height: 670px;
   color: #fff;
-  background-color: #222; }
+  background-color: #bd8852; }
   #section5 img {
     width: 100%;
     height: 50%;
@@ -147,13 +152,13 @@ li.empty {
     transform: translateY(0); } }
 @media only screen and (min-width: 768px) {
   header {
-    height: 70vh;
+    height: 69vh;
     background-image: url("../images/walking-vader.jpg");
     background-size: cover;
     background-position: center; }
     header .logo {
       width: 16%;
-      top: 9.2% !important;
+      top: 10.2% !important;
       left: 41%; }
     header .header-text {
       position: absolute;
