@@ -1,347 +1,339 @@
 * {
-  padding: 0%;
-  margin: 0%; }
+  padding: 0;
+  margin: 0; }
+
+html {
+  scroll-behavior: smooth; }
 
 body {
-  position: relative;
-  scroll-behavior: smooth; }
-  body h1 {
-    text-align: center;
-    margin-top: -41px; }
-  body h5 {
-    font-size: 28px; }
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: auto; }
 
-header {
-  height: 41.5vh;
-  background-image: url("../images/walking-vader.jpg");
-  background-size: contain;
-  background-position: center;
-  background-position-y: 12%;
-  background-repeat: no-repeat;
-  background-attachment: fixed; }
-  header .logo {
-    width: 23%;
-    position: absolute;
-    top: 5.4%;
-    left: 38%;
-    border-radius: 100%;
-    background-color: #fff; }
-  header .header-text {
-    position: absolute;
-    top: 3%;
-    color: #bd8852; }
+.header {
+  grid-column: 1 / 9;
+  grid-row: 1 / 3;
+  width: 100vw;
+  height: 100%;
+  text-align: center; }
 
-nav {
-  position: fixed; }
-
-.medium {
-  background-image: url("../images/sunrise-vader.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; }
-  .medium .time-line {
-    display: none !important; }
-
-#section1 {
-  padding-top: 50px;
-  height: 326px;
-  color: #fff;
-  background-color: #1E88E5; }
-  #section1 h1 {
-    text-align: center;
-    padding-top: 14px; }
-
-#section2 {
-  padding-top: 50px;
-  height: 330px;
-  color: #fff; }
-
-.personal-details {
-  background-color: #999; }
-
-.education {
-  background-color: #f0ad4e; }
-
-.secondary-edu {
-  background-color: #d9534f;
-  color: white; }
-
-.work-experience {
-  background-color: #999;
-  color: white; }
-
-.hobbies {
-  background-color: #f0ad4e; }
-
-#section3 {
-  height: 540px;
-  color: #fff; }
-
-#section41 {
-  padding-top: 10px;
-  height: 330px;
-  font-weight: bolder; }
-  #section41 p {
-    z-index: 9999;
-    opacity: 1; }
-
-#section42 {
-  padding-top: 10px;
-  height: 330px;
-  color: #fff; }
-
-#section5 {
-  height: 670px;
-  color: #fff; }
-  #section5 img {
-    width: 100%;
-    height: 50%;
-    position: relative;
-    padding-bottom: 10px; }
-
-#section6 {
-  margin-top: 5%;
+.zoominheader {
+  width: 100vw;
+  height: 100%;
   text-align: center;
-  padding-top: 2px;
-  height: 650px; }
-  #section6 div {
-    position: relative;
-    left: 40%;
-    padding-bottom: 20px !important;
-    width: 20%; }
-
-.bottom {
-  background-image: url("../images/walkingBack-vader.jpg");
-  background-size: cover;
-  background-position: left;
-  background-position-x: 95%;
-  background-repeat: no-repeat;
+  background: url("../images/redd-angelo-70553-unsplash.jpg");
   background-attachment: fixed;
-  padding: 0 !important; }
-  .bottom body {
-    padding: 10px; }
-  .bottom .wrapper {
-    width: 70%; }
-  @media (max-width: 992px) {
-    .bottom .wrapper {
-      width: 100%; } }
-  .bottom .panel-heading {
-    padding: 0;
-    border: 0; }
-  .bottom .panel {
-    background-color: #389688 !important; }
-  .bottom .panel-title > a, .bottom .panel-title > a:active {
-    display: block;
-    padding: 15px;
-    color: #555;
-    background-color: #999;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    word-spacing: 3px;
-    text-decoration: none; }
-  .bottom .panel-heading a:before {
-    font-family: 'Glyphicons Halflings';
-    content: "\e114";
-    float: right;
-    transition: all 0.5s; }
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  position: relative;
+  top: 0%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-animation: zoomin 6s ease-in infinite;
+  animation: zoomin 6 s ease-in infinite;
+  transition: all .5s ease-in-out; }
 
-.slideanim {
-  visibility: hidden;
-  visibility: visible\9;
-  /*For old IE browsers IE6-8 */ }
+/* The innermost element*/
+.zoomoutheader {
+  width: 400px;
+  height: 200px;
+  text-align: center;
+  background: none;
+  -webkit-animation: grow 60s linear 10ms infinite;
+  animation: grow 60s linear 10ms infinite;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-animation: zoomout 90s ease-in infinite;
+  animation: zoomout 90s ease-in infinite;
+  transition: all .65s ease-in-out; }
 
-.slideanim.slide {
-  visibility: visible;
-  animation: slide 1s; }
-
-.slideanim::after {
-  /* useful when its child elements are float:left; */
-  content: "";
-  display: table;
-  clear: both; }
-
-@keyframes slide {
+/* Zoom in Keyframes */
+@-webkit-keyframes zoomin {
   0% {
-    opacity: 0;
-    transform: translateY(50%); }
+    transform: scale(1); }
+  50% {
+    transform: scale(1.02); }
   100% {
-    opacity: 1;
-    transform: translateY(0); } }
+    transform: scale(1); } }
+/*End of Zoom in Keyframes */
+/* Zoom out Keyframes */
+@-webkit-keyframes zoomout {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(0.98); }
+  100% {
+    transform: scale(1); } }
+/*End of Zoom out Keyframes */
+/*Style for the text*/
+.text {
+  color: whitesmoke;
+  font-weight: bold;
+  position: absolute;
+  left: 5%;
+  top: 40%;
+  background-color: #0000001f;
+  text-align: center; }
+
+#nav {
+  grid-column: 1 / 9;
+  grid-row: 3 / 4;
+  background-color: whitesmoke;
+  position: sticky;
+  width: 100vw;
+  height: 7vh;
+  padding-top: 15px; }
+  #nav a {
+    text-decoration: none;
+    color: black;
+    padding-left: 3px;
+    line-height: 4px;
+    font-size: 19px; }
+
+section {
+  grid-column: 1 / 9;
+  width: 100vw; }
+
+#about {
+  grid-column: 1 / 9;
+  grid-row: 4 / 5;
+  margin-top: 10px;
+  background-color: transparent;
+  background-image: url("../images/avery-richardson-210724-unsplash.jpg");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  color: whitesmoke;
+  height: 30vh;
+  width: 100vw; }
+
+#skills {
+  background-image: url(../images/fraser-cottrell-697721-unsplash.jpg);
+  background-position: center;
+  background-size: cover; }
+
+.skills-images .images {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(7, 1fr); }
+  .skills-images .images img {
+    width: 100%; }
+
+.projects-images .images {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr); }
+  .projects-images .images img {
+    width: 80%; }
+
+#contact {
+  background-image: url(../images/android-wallpaper-artistic-asphalt-799443.jpg);
+  background-position: bottom;
+  background-position-y: 55%;
+  background-size: cover;
+  height: 50vh;
+  color: whitesmoke; }
+
 @media only screen and (min-width: 768px) {
-  header {
-    height: 69vh;
-    background-image: url("../images/walking-vader.jpg");
-    background-size: cover;
-    background-position: center; }
-    header .logo {
-      width: 16%;
-      top: 10.2% !important;
-      left: 41%; }
-    header .header-text {
-      position: absolute;
-      top: 4%;
-      left: 9%;
-      color: #bd8852; }
+  .header {
+    height: 75vh; }
 
-  .timeline {
-    list-style: none;
-    padding: 20px 0 20px;
-    position: relative; }
+  #nav {
+    height: 14vh; }
+    #nav a {
+      text-decoration: none;
+      color: black;
+      padding-left: 61px;
+      line-height: 52px;
+      font-size: 26px; }
 
-  .timeline:before {
-    top: 0;
-    bottom: 0;
+  /*Style for the text*/
+  .text {
+    color: whitesmoke;
+    font-weight: bold;
     position: absolute;
-    content: " ";
-    width: 3px;
-    background-color: #eeeeee;
-    left: 50%;
-    margin-left: -1.5px; }
+    left: 6%;
+    top: 93%;
+    background-color: #00000063;
+    text-align: center; }
 
-  .timeline > li {
-    margin-bottom: 20px;
-    position: relative; }
-
-  .timeline > li:before,
-  .timeline > li:after {
-    content: " ";
-    display: table; }
-
-  .timeline > li:after {
-    clear: both; }
-
-  .timeline > li:before,
-  .timeline > li:after {
-    content: " ";
-    display: table; }
-
-  .timeline > li:after {
-    clear: both; }
-
-  .timeline > li > .timeline-panel {
-    width: 46%;
-    float: left;
-    border: 1px solid #d4d4d4;
-    border-radius: 2px;
-    padding: 20px;
-    position: relative;
-    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175); }
-
-  .timeline > li > .timeline-panel:before {
-    position: absolute;
-    top: 26px;
-    right: -15px;
-    display: inline-block;
-    border-top: 15px solid transparent;
-    border-left: 15px solid #ccc;
-    border-right: 0 solid #ccc;
-    border-bottom: 15px solid transparent;
-    content: " "; }
-
-  .timeline > li > .timeline-panel:after {
-    position: absolute;
-    top: 27px;
-    right: -14px;
-    display: inline-block;
-    border-top: 14px solid transparent;
-    border-left: 14px solid #fff;
-    border-right: 0 solid #fff;
-    border-bottom: 14px solid transparent;
-    content: " "; }
-
-  .timeline > li > .timeline-badge {
-    color: #fff;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    font-size: 1.4em;
-    text-align: center;
-    position: absolute;
-    top: 16px;
-    left: 50%;
-    margin-left: -25px;
-    background-color: #999999;
-    z-index: 100;
-    border-top-right-radius: 50%;
-    border-top-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-bottom-left-radius: 50%; }
-
-  .timeline > li.timeline-inverted > .timeline-panel {
-    float: right; }
-
-  .timeline > li.timeline-inverted > .timeline-panel:before {
-    border-left-width: 0;
-    border-right-width: 15px;
-    left: -15px;
-    right: auto; }
-
-  .timeline > li.timeline-inverted > .timeline-panel:after {
-    border-left-width: 0;
-    border-right-width: 14px;
-    left: -14px;
-    right: auto; }
-
-  .timeline-badge.primary {
-    background-color: #2e6da4 !important; }
-
-  .timeline-badge.success {
-    background-color: #3f903f !important; }
-
-  .timeline-badge.warning {
-    background-color: #f0ad4e !important; }
-
-  .timeline-badge.danger {
-    background-color: #d9534f !important; }
-
-  .timeline-badge.info {
-    background-color: #5bc0de !important; }
-
-  .timeline-title {
-    margin-top: 0;
-    color: inherit; }
-
-  .timeline-body > p,
-  .timeline-body > ul {
-    margin-bottom: 0; }
-
-  .timeline-body > p + p {
-    margin-top: 5px; }
-
-  #section1 {
-    height: 406px; }
-
-  #section5 img {
-    width: 30%;
-    height: 50%;
-    position: relative;
-    padding-bottom: 10px;
-    display: flex; }
-
-  #section6 {
-    display: flex;
-    margin-top: 20%;
-    text-align: center;
-    padding-top: 2px;
-    height: 650px;
-    color: #0e1118;
-    background-color: transparent; }
-    #section6 div {
+  #about {
+    height: 40vh; }
+    #about h1 {
       position: relative;
-      left: 0%;
-      top: 30%;
-      right: 10%;
-      padding-bottom: 0px !important;
-      width: 20%; }
-      #section6 div h1 {
-        text-align: center;
-        margin-top: -136px;
-        height: 30px;
-        position: absolute;
-        left: 50%; } }
+      width: 40%;
+      word-break: break-all;
+      top: 47px;
+      right: 30%; }
+
+  .about-text {
+    position: relative;
+    width: 40%;
+    word-break: break-all;
+    left: 35%;
+    top: 24px; }
+
+  #education {
+    padding: 30px; }
+    #education h1 {
+      position: relative;
+      width: 40%;
+      word-break: break-all;
+      top: 23px;
+      right: 30%; }
+
+  .eduction-text {
+    position: relative;
+    width: 40%;
+    word-break: break-all;
+    left: 35%; }
+
+  #skills {
+    height: 55vh;
+    padding: 30px;
+    color: whitesmoke; }
+    #skills h1 {
+      position: relative;
+      width: 40%;
+      word-break: break-all;
+      top: 23px;
+      right: 30%; }
+
+  .skills-text {
+    position: relative;
+    width: 40%;
+    word-break: break-all;
+    left: 35%; }
+
+  .skills-images {
+    padding: 50px; }
+    .skills-images .images {
+      color: black;
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: repeat(7, 1fr);
+      padding-left: 55px;
+      margin-top: 50px; }
+      .skills-images .images img {
+        width: 100%; }
+
+  #projects {
+    padding: 30px; }
+    #projects h1 {
+      position: relative;
+      width: 40%;
+      word-break: break-all;
+      top: 23px;
+      right: 30%; }
+
+  .projects-text {
+    position: relative;
+    width: 40%;
+    word-break: break-all;
+    left: 35%; }
+
+  .projects-images {
+    padding: 50px; }
+    .projects-images .images {
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: repeat(3, 1fr);
+      padding-left: 50px; }
+      .projects-images .images img {
+        width: 80%; }
+
+  #contact {
+    padding: 30px; }
+    #contact h1 {
+      position: relative;
+      width: 40%;
+      word-break: break-all;
+      top: 23px;
+      right: 30%; }
+
+  .contact-text {
+    position: relative;
+    width: 40%;
+    word-break: break-all;
+    left: 40%;
+    color: white; }
+
+  span {
+    color: red; } }
+@media only screen and (min-width: 1024px) {
+  .header {
+    height: 80vh;
+    width: 100vw; }
+
+  #nav {
+    height: 14vh; }
+    #nav a {
+      text-decoration: none;
+      color: black;
+      padding-left: 100px;
+      line-height: 52px;
+      font-size: 49px; }
+
+  /*Style for the text*/
+  .text {
+    color: whitesmoke;
+    font-weight: bold;
+    position: absolute;
+    left: 6%;
+    top: 93%;
+    background-color: #00000063;
+    text-align: center;
+    font-size: 20px; }
+
+  #about {
+    background-position-y: 50%; }
+    #about h1 {
+      position: relative;
+      width: 40%;
+      word-break: break-all;
+      top: 47px;
+      right: 30%; }
+
+  .about-text {
+    position: relative;
+    width: 40%;
+    word-break: break-all;
+    left: 35%;
+    top: 24px; }
+
+  #education h1 {
+    position: relative;
+    width: 40%;
+    word-break: break-all;
+    top: 23px;
+    right: 30%; }
+
+  .eduction-text {
+    position: relative;
+    width: 40%;
+    word-break: break-all;
+    left: 35%; }
+
+  #skills h1 {
+    position: relative;
+    width: 40%;
+    word-break: break-all;
+    top: 23px;
+    right: 30%; }
+
+  .skills-text {
+    position: relative;
+    width: 40%;
+    word-break: break-all;
+    left: 35%; }
+
+  .projects-images .images {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr); }
+    .projects-images .images img {
+      width: 30%; } }
 
 /*# sourceMappingURL=main.css.map */
